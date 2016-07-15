@@ -27,7 +27,7 @@ abstract class AbstractFinder
     private $cached = [];
 
     /** @var array Хранилище инстансов для разных классов Finder'ов */
-    private static $instanceStorage = [];
+    protected static $instanceStorage = [];
 
     /** @var mixed Имя ключевого поля для формирования массива с данными */
     private $queryKeyField;
