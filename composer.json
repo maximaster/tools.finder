@@ -1,0 +1,22 @@
+{
+  "name": "maximaster/tools.finder",
+  "description": "Библиотека, облегчающая поиск идентификаторов разных сущностей для 1С-Битрикс",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Mikhail Zhurov",
+      "email": "m.zhurov@maximaster.ru"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": "^5.6",
+    "maximaster/tools.events": "^1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Maximaster\\Tools\\Finder\\": "src/"
+    },
+    "files": ["bootstrap.php"]
+  }
+}
