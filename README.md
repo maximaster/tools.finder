@@ -22,15 +22,15 @@
 Например, для инфоблока данным методам необходимо передать строчный идентификатор типа инфоблока, а также символьный код самого инфоблока. 
 
 ```php
-\Maximaster\Tools\Iblock::get('catalog', 'products');
+\Maximaster\Tools\Finder\Iblock::get('catalog', 'products');
 ```
 
 , а для раздела инфоблока метод `get()` будет иметь другой набор параметров, а именно идентификатор инфоблока и символьный код раздела. Если вы хотите обратиться к какому-то разделу из инфоблока с каталогом, нужно воспользоваться следующим примером:
 
 
 ```php
-\Maximaster\Tools\IblockSection::get(
-    \Maximaster\Tools\Iblock::get('catalog', 'products'),
+\Maximaster\Tools\Finder\IblockSection::get(
+    \Maximaster\Tools\Finder\Iblock::get('catalog', 'products'),
     'section_code'
 );
 ```
