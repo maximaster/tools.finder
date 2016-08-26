@@ -13,7 +13,7 @@ class OnBeforeIBlockPropertyDelete extends BaseEvent
     public static function invalidateCache($id)
     {
         if (!static::$deletedIblockId) {
-            $property = PropertyTable::query()->addFilter('ID', $id)->setSelect('IBLOCK_ID')->exec()->fetch();
+            $property = PropertyTable::query()->addFilter('ID', $id)->setSelect(['IBLOCK_ID'])->exec()->fetch();
             static::$deletedIblockId = $property['IBLOCK_ID'];
         }
 
