@@ -58,7 +58,7 @@ class OrderProperty extends AbstractFinder
      */
     public static function getId($personTypeId, $propertyCode)
     {
-        return self::get($personTypeId, $propertyCode);
+        return self::get($personTypeId, $propertyCode)['ID'];
     }
 
 }
