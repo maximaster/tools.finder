@@ -1,11 +1,11 @@
 <?php
 
-namespace Maximaster\Tools\Finder\EventHandlers\Bitrix\Highloadblock\Highloadblock;
+namespace Maximaster\Tools\Finder\EventHandlers\Bitrix\Highloadblock;
 
 use Maximaster\Tools\Finder\HlBlock;
 use Maximaster\Tools\Events\BaseEvent;
 
-class OnAdd extends BaseEvent
+class OnUpdate extends BaseEvent
 {
     public static function invalidateCache()
     {
