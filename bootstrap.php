@@ -1,15 +1,177 @@
 <?php
 
-use Maximaster\Tools\Events\Listener;
+use Bitrix\Main;
 
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     return false;
 }
 
-$eventListener = new Listener();
-$eventListener->addNamespace(
-    '\\Maximaster\\Tools\\Finder\\EventHandlers',
-    __DIR__ . '/src/EventHandlers'
+$eventManager = Main\EventManager::getInstance();
+$eventManager->addEventHandlerCompatible(
+    "iblock",
+    "OnAfterIBlockAdd",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Iblock\OnAfterIBlockAdd::class,
+        "invalidateCache"
+    ]
 );
-$eventListener->register();
-
+$eventManager->addEventHandlerCompatible(
+    "iblock",
+    "OnAfterIBlockSectionAdd",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Iblock\OnAfterIBlockSectionAdd::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "iblock",
+    "OnAfterIBlockUpdate",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Iblock\OnAfterIBlockUpdate::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "iblock",
+    "OnAfterIBlockSectionDelete",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Iblock\OnAfterIBlockSectionDelete::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "iblock",
+    "OnAfterIBlockSectionUpdate",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Iblock\OnAfterIBlockSectionUpdate::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "iblock",
+    "OnBeforeIBlockDelete",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Iblock\OnBeforeIBlockDelete::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "iblock",
+    "OnBeforeIBlockPropertyDelete",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Iblock\OnBeforeIBlockPropertyDelete::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "iblock",
+    "OnAfterIBlockPropertyAdd",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Iblock\OnAfterIBlockPropertyAdd::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "iblock",
+    "OnAfterIBlockPropertyUpdate",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Iblock\OnAfterIBlockPropertyUpdate::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "catalog",
+    "OnGroupDelete",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Catalog\OnGroupDelete::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "catalog",
+    "OnGroupAdd",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Catalog\OnGroupAdd::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "catalog",
+    "OnGroupUpdate",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Catalog\OnGroupUpdate::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "highloadblock",
+    "OnAdd",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Highloadblock\OnAdd::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "highloadblock",
+    "OnDelete",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Highloadblock\OnDelete::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "highloadblock",
+    "OnUpdate",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Highloadblock\OnUpdate::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "main",
+    "OnAfterGroupAdd",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Main\OnAfterGroupAdd::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "main",
+    "OnGroupDelete",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Main\OnGroupDelete::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "main",
+    "OnAfterGroupUpdate",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Main\OnAfterGroupUpdate::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "sale",
+    "OnOrderPropsAdd",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Sale\OnOrderPropsAdd::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "sale",
+    "OnOrderPropsUpdate",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Sale\OnOrderPropsUpdate::class,
+        "invalidateCache"
+    ]
+);
+$eventManager->addEventHandlerCompatible(
+    "sale",
+    "OnOrderPropsDelete",
+    [
+        \Maximaster\Tools\Finder\EventHandlers\Bitrix\Sale\OnOrderPropsDelete::class,
+        "invalidateCache"
+    ]
+);
