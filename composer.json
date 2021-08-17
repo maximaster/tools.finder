@@ -10,8 +10,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "php": "^5.5 || ^7.0",
-    "maximaster/tools.events": "^1.2"
+    "php": "^5.5 || ^7.0"
   },
   "autoload": {
     "psr-4": {
