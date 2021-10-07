@@ -101,7 +101,9 @@ abstract class AbstractFinder
         if ($value === null) {
             $q = call_user_func_array([$this, 'query'], $keyParams);
             $value = $this->getFromPermanentCache($q);
-            $this->setMemoryCache($value, $keyParams);
+            if ($value !== null) {
+                $this->setMemoryCache($value, $keyParams);
+            }
         }
 
         return $value;
