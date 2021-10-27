@@ -4,9 +4,8 @@ namespace Maximaster\Tools\Finder\EventHandlers\Bitrix\Iblock;
 
 use Bitrix\Iblock\SectionTable;
 use Maximaster\Tools\Finder\IblockSection;
-use Maximaster\Tools\Events\BaseEvent;
 
-class OnAfterIBlockSectionDelete extends BaseEvent
+class OnAfterIBlockSectionDelete
 {
     private static $deletedIblockId = [];
 

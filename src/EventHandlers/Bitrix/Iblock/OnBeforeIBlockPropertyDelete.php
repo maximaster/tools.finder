@@ -4,9 +4,8 @@ namespace Maximaster\Tools\Finder\EventHandlers\Bitrix\Iblock;
 
 use Bitrix\Iblock\PropertyTable;
 use Maximaster\Tools\Finder\IblockProperty;
-use Maximaster\Tools\Events\BaseEvent;
 
-class OnBeforeIBlockPropertyDelete extends BaseEvent
+class OnBeforeIBlockPropertyDelete
 {
     private static $deletedIblockId = [];
 

@@ -3,9 +3,8 @@
 namespace Maximaster\Tools\Finder\EventHandlers\Bitrix\Iblock;
 
 use Maximaster\Tools\Finder\Iblock;
-use Maximaster\Tools\Events\BaseEvent;
 
-class OnAfterIBlockAdd extends BaseEvent
+class OnAfterIBlockAdd
 {
     public static function invalidateCache($iblock)
     {

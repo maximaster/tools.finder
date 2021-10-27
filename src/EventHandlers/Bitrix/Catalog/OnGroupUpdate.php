@@ -3,9 +3,8 @@
 namespace Maximaster\Tools\Finder\EventHandlers\Bitrix\Catalog;
 
 use Maximaster\Tools\Finder\PriceType;
-use Maximaster\Tools\Events\BaseEvent;
 
-class OnGroupUpdate extends BaseEvent
+class OnGroupUpdate
 {
     public static function invalidateCache($id, $group)
     {
