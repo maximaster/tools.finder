@@ -3,9 +3,8 @@
 namespace Maximaster\Tools\Finder\EventHandlers\Bitrix\Main;
 
 use Maximaster\Tools\Finder\UserGroup;
-use Maximaster\Tools\Events\BaseEvent;
 
-class OnAfterGroupUpdate extends BaseEvent
+class OnAfterGroupUpdate
 {
     public static function invalidateCache($group)
     {

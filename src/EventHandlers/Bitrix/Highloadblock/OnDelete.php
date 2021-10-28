@@ -3,9 +3,8 @@
 namespace Maximaster\Tools\Finder\EventHandlers\Bitrix\Highloadblock;
 
 use Maximaster\Tools\Finder\HlBlock;
-use Maximaster\Tools\Events\BaseEvent;
 
-class OnDelete extends BaseEvent
+class OnDelete
 {
     public static function invalidateCache()
     {

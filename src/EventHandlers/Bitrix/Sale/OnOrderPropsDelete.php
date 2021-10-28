@@ -3,9 +3,8 @@
 namespace Maximaster\Tools\Finder\EventHandlers\Bitrix\Sale;
 
 use Maximaster\Tools\Finder\OrderProperty;
-use Maximaster\Tools\Events\BaseEvent;
 
-class OnOrderPropsDelete extends BaseEvent
+class OnOrderPropsDelete
 {
     public static function invalidateCache()
     {
