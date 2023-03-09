@@ -22,12 +22,13 @@ class UserGroup extends AbstractFinder
 
     /**
      * Получает группу пользователя по ее символьному коду
-     * @param string $stringId
-     *
+     * @param array<mixed> $args
      * @return \Bitrix\Main\Entity\Query
      */
-    protected function query($stringId)
+    protected function query(...$args)
     {
+        [$stringId] = $args;
+
         $q = GroupTable::query()
             ->setSelect(['ID', 'STRING_ID']);
 
@@ -37,12 +38,12 @@ class UserGroup extends AbstractFinder
     }
 
     /**
-     * @param string $stringId
-     *
+     * @param array<mixed> $keyParams
      * @return array
      */
-    public static function get($stringId)
+    public static function get(...$keyParams)
     {
+        [$stringId] = $keyParams;
         return parent::get($stringId);
     }
 
