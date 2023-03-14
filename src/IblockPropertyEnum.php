@@ -23,13 +23,13 @@ class IblockPropertyEnum extends AbstractFinder
     /**
      * Получает идентификатор значения свойства типа "Список" по идентификатору свойства и XML_ID значения свойства
      *
-     * @param int $propertyId
-     * @param string $enumCode
-     *
+     * @param mixed ...$args первый аргумент Id свойства - int, второй XML_ID свойства - строка
      * @return \Bitrix\Main\Entity\Query
      */
-    protected function query($propertyId, $enumCode)
+    protected function query(...$args)
     {
+        list($propertyId, $enumCode) = $args;
+
         $q = PropertyEnumerationTable::query()
             ->addFilter('PROPERTY.ID', $propertyId)
             ->setSelect(['XML_ID', 'ID']);
@@ -40,13 +40,12 @@ class IblockPropertyEnum extends AbstractFinder
     }
 
     /**
-     * @param int $propertyId
-     * @param string $xmlId
-     *
+     * @param mixed ...$keyParams
      * @return array
      */
-    public static function get($propertyId, $xmlId)
+    public static function get(...$keyParams)
     {
+        list($propertyId, $xmlId) = $keyParams;
         return parent::get($propertyId, $xmlId);
     }
 

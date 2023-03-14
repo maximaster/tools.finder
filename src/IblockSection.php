@@ -23,13 +23,13 @@ class IblockSection extends AbstractFinder
     /**
      * Получает раздел инфоблока по идентификатору инфоблока и коду раздела
      *
-     * @param int $iblockId
-     * @param string $sectionCode
-     *
+     * @param mixed ...$args первый аргумент Id ИБ - int, второй код раздела - строка
      * @return \Bitrix\Main\Entity\Query
      */
-    protected function query($iblockId, $sectionCode)
+    protected function query(...$args)
     {
+        list($iblockId, $sectionCode) = $args;
+
         $q = SectionTable::query()
             ->addFilter('IBLOCK_ID', $iblockId)
             ->setSelect(['ID', 'CODE']);
@@ -40,13 +40,12 @@ class IblockSection extends AbstractFinder
     }
 
     /**
-     * @param int $iblockId
-     * @param string $sectionCode
-     *
+     * @param mixed ...$keyParams
      * @return array
      */
-    public static function get($iblockId, $sectionCode)
+    public static function get(...$keyParams)
     {
+        list($iblockId, $sectionCode) = $keyParams;
         return parent::get($iblockId, $sectionCode);
     }
 

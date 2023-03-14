@@ -23,12 +23,13 @@ class PriceType extends AbstractFinder
 
     /**
      * Получает тип цены по его названию
-     * @param string $name
-     *
+     * @param mixed ...$args единственный аргумент название типа цены - строка
      * @return \Bitrix\Main\Entity\Query
      */
-    protected function query($name)
+    protected function query(...$args)
     {
+        list($name) = $args;
+
         $q = GroupTable::query()
             ->setSelect(['ID', 'NAME', 'BASE']);
 
@@ -59,12 +60,12 @@ class PriceType extends AbstractFinder
     }
 
     /**
-     * @param string $name
-     *
+     * @param mixed ...$keyParams
      * @return array
      */
-    public static function get($name)
+    public static function get(...$keyParams)
     {
+        list($name) = $keyParams;
         return parent::get($name);
     }
 

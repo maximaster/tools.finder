@@ -23,13 +23,13 @@ class Iblock extends AbstractFinder
     /**
      * Получает инфоблок по его коду и типу
      *
-     * @param string $type
-     * @param string $code
-     * 
+     * @param mixed ...$args первый аргумент тип ИБ - строка, второй код ИБ, также строка
      * @return \Bitrix\Main\Entity\Query
      */
-    protected function query($type, $code)
+    protected function query(...$args)
     {
+        list($type, $code) = $args;
+
         $q = IblockTable::query()
             ->addFilter('TYPE.ID', $type)
             ->setSelect(['CODE', 'ID']);
@@ -40,13 +40,12 @@ class Iblock extends AbstractFinder
     }
 
     /**
-     * @param string $type
-     * @param string $code
-     *
+     * @param mixed ...$keyParams
      * @return array
      */
-    public static function get($type, $code)
+    public static function get(...$keyParams)
     {
+        list($type, $code) = $keyParams;
         return parent::get($type, $code);
     }
 
