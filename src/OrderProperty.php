@@ -23,12 +23,12 @@ class OrderProperty extends AbstractFinder
     /**
      * Получает свойство заказа по идентификатору типа плательщика и коду свойства
      *
-     * @param array<mixed> $args
+     * @param mixed ...$args первый аргумент тип плательщика - int, второй код свойства - строка
      * @return \Bitrix\Main\Entity\Query
      */
     protected function query(...$args)
     {
-        [$personTypeId, $propertyCode] = $args;
+        list($personTypeId, $propertyCode) = $args;
 
         $q = OrderPropsTable::query()
             ->addFilter('PERSON_TYPE_ID', $personTypeId)
@@ -40,12 +40,12 @@ class OrderProperty extends AbstractFinder
     }
 
     /**
-     * @param array<mixed> $keyParams
+     * @param mixed ...$keyParams
      * @return array
      */
     public static function get(...$keyParams)
     {
-        [$personTypeId, $propertyCode] = $keyParams;
+        list($personTypeId, $propertyCode) = $keyParams;
         return parent::get($personTypeId, $propertyCode);
     }
 

@@ -22,12 +22,12 @@ class IblockProperty extends AbstractFinder
     /**
      * Получает свойство инфоблока по идентификатору инфоблока и коду свойства
      *
-     * @param array<mixed> $args
+     * @param mixed ...$args первый аргумент Id ИБ - int, второй код ИБ - строка
      * @return \Bitrix\Main\Entity\Query
      */
     protected function query(...$args)
     {
-        [$iblockId, $code] = $args;
+        list($iblockId, $code) = $args;
 
         $q = PropertyTable::query()
             ->addFilter('IBLOCK_ID', $iblockId)
@@ -39,12 +39,12 @@ class IblockProperty extends AbstractFinder
     }
 
     /**
-     * @param array<mixed> $keyParams
+     * @param mixed ...$keyParams
      * @return array
      */
     public static function get(...$keyParams)
     {
-        [$iblockId, $code] = $keyParams;
+        list($iblockId, $code) = $keyParams;
         return parent::get($iblockId, $code);
     }
 

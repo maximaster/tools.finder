@@ -79,7 +79,7 @@ abstract class AbstractFinder
      * Возвращает инстанс нужного класса
      * @return mixed
      */
-    protected function getInstance()
+    protected static function getInstance()
     {
         $key = get_called_class();
         if (!isset(static::$instanceStorage[ $key ])) {
@@ -145,7 +145,7 @@ abstract class AbstractFinder
     /**
      * Метод, который необходимо переопределить в родителе. Этот метод является основным для генерации запроса на выборку
      *
-     * @param array<mixed> $args
+     * @param mixed ...$args
      * @return \Bitrix\Main\Entity\Query
      */
     protected function query(...$args)
@@ -259,7 +259,7 @@ abstract class AbstractFinder
     /**
      * Инициализирует выборку данных из кеша. В общем-то шорткат, проброшенный наружу
      *
-     * @param array<mixed> $keyParams
+     * @param mixed ...$keyParams
      * @return mixed
      */
     public static function get(...$keyParams)

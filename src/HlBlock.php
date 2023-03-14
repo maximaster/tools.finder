@@ -23,12 +23,12 @@ class HlBlock extends AbstractFinder
     /**
      * Получает Highload-блок по его названию
      *
-     * @param array<mixed> $args
+     * @param mixed ...$args единственный аргумент название HL блока в виде строки
      * @return \Bitrix\Main\Entity\Query
      */
     protected function query(...$args)
     {
-        [$name] = $args;
+        list($name) = $args;
 
         $q = HighloadBlockTable::query()
             ->setSelect(['ID', 'TABLE_NAME', 'NAME']);
@@ -39,12 +39,12 @@ class HlBlock extends AbstractFinder
     }
 
     /**
-     * @param array<mixed> $keyParams
+     * @param mixed ...$keyParams
      * @return array
      */
     public static function get(...$keyParams)
     {
-        [$name] = $keyParams;
+        list($name) = $keyParams;
         return parent::get($name);
     }
 
