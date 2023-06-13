@@ -192,7 +192,7 @@ abstract class AbstractFinder
         $shards = $this->queryShards ? $this->queryShards : [];
         $path = $this->getFullCachePath($shards);
 
-        if ($cache->initCache(86400, null, $path)) {
+        if ($cache->initCache(86400, '', $path)) {
             $items = $cache->getVars();
         } else {
             $cache->startDataCache();
