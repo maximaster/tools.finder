@@ -24,7 +24,7 @@ class OrderProperty extends AbstractFinder
      * Получает свойство заказа по идентификатору типа плательщика и коду свойства
      *
      * @param mixed ...$args первый аргумент тип плательщика - int, второй код свойства - строка
-     * @return \Bitrix\Main\Entity\Query
+     * @return \Bitrix\Main\ORM\Query\Query
      */
     protected function query(...$args)
     {

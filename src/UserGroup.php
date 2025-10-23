@@ -23,7 +23,7 @@ class UserGroup extends AbstractFinder
     /**
      * Получает группу пользователя по ее символьному коду
      * @param mixed ...$args единственный аргумент символьный код группы - строка
-     * @return \Bitrix\Main\Entity\Query
+     * @return \Bitrix\Main\ORM\Query\Query
      */
     protected function query(...$args)
     {

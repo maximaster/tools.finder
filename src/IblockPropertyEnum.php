@@ -24,7 +24,7 @@ class IblockPropertyEnum extends AbstractFinder
      * Получает идентификатор значения свойства типа "Список" по идентификатору свойства и XML_ID значения свойства
      *
      * @param mixed ...$args первый аргумент Id свойства - int, второй XML_ID свойства - строка
-     * @return \Bitrix\Main\Entity\Query
+     * @return \Bitrix\Main\ORM\Query\Query
      */
     protected function query(...$args)
     {

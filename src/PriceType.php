@@ -3,7 +3,7 @@
 namespace Maximaster\Tools\Finder;
 
 use Bitrix\Catalog\GroupTable;
-use Bitrix\Main\Entity\Query;
+use Bitrix\Main\ORM\Query\Query;
 
 /**
  * Finder для типов цен
@@ -24,7 +24,7 @@ class PriceType extends AbstractFinder
     /**
      * Получает тип цены по его названию
      * @param mixed ...$args единственный аргумент название типа цены - строка
-     * @return \Bitrix\Main\Entity\Query
+     * @return \Bitrix\Main\ORM\Query\Query
      */
     protected function query(...$args)
     {
