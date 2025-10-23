@@ -3,7 +3,7 @@
 namespace Maximaster\Tools\Finder;
 
 use Bitrix\Main\Data\Cache;
-use Bitrix\Main\Entity\Query;
+use Bitrix\Main\ORM\Query\Query;
 
 /**
  * Базовый класс для Finder'ов, который реализовывает большую часть потребностей (кеш, выборка и т.д.)
@@ -146,7 +146,7 @@ abstract class AbstractFinder
      * Метод, который необходимо переопределить в родителе. Этот метод является основным для генерации запроса на выборку
      *
      * @param mixed ...$args
-     * @return \Bitrix\Main\Entity\Query
+     * @return \Bitrix\Main\ORM\Query\Query
      */
     protected function query(...$args)
     {

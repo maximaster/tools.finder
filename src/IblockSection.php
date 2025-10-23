@@ -24,7 +24,7 @@ class IblockSection extends AbstractFinder
      * Получает раздел инфоблока по идентификатору инфоблока и коду раздела
      *
      * @param mixed ...$args первый аргумент Id ИБ - int, второй код раздела - строка
-     * @return \Bitrix\Main\Entity\Query
+     * @return \Bitrix\Main\ORM\Query\Query
      */
     protected function query(...$args)
     {

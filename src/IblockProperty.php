@@ -23,7 +23,7 @@ class IblockProperty extends AbstractFinder
      * Получает свойство инфоблока по идентификатору инфоблока и коду свойства
      *
      * @param mixed ...$args первый аргумент Id ИБ - int, второй код ИБ - строка
-     * @return \Bitrix\Main\Entity\Query
+     * @return \Bitrix\Main\ORM\Query\Query
      */
     protected function query(...$args)
     {

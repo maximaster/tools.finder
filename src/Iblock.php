@@ -24,7 +24,7 @@ class Iblock extends AbstractFinder
      * Получает инфоблок по его коду и типу
      *
      * @param mixed ...$args первый аргумент тип ИБ - строка, второй код ИБ, также строка
-     * @return \Bitrix\Main\Entity\Query
+     * @return \Bitrix\Main\ORM\Query\Query
      */
     protected function query(...$args)
     {

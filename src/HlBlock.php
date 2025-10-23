@@ -24,7 +24,7 @@ class HlBlock extends AbstractFinder
      * Получает Highload-блок по его названию
      *
      * @param mixed ...$args единственный аргумент название HL блока в виде строки
-     * @return \Bitrix\Main\Entity\Query
+     * @return \Bitrix\Main\ORM\Query\Query
      */
     protected function query(...$args)
     {
