@@ -2,26 +2,28 @@
 
 namespace Maximaster\Tools\Finder;
 
+use Bitrix\Crm\Model\Dynamic\TypeTable;
+
 class SmartProcess extends AbstractFinder
 {
+    protected function requireModules()
+    {
+        return ['crm'];
+    }
+
     protected function getAdditionalCachePath()
     {
         return '/smartprocess';
-    }
-
-    protected function requireModules()
-    {
-        return [];
     }
 
     protected function query(...$args)
     {
         list($stringId) = $args;
 
-        $q = GroupTable::query()
-            ->setSelect(['ID', 'STRING_ID']);
+        $q = TypeTable::query()
+            ->setSelect(['ID', 'NAME', 'ENTITY_TYPE_ID']);
 
-        $this->setQueryMetadata('STRING_ID', $stringId);
+        $this->setQueryMetadata('NAME', $stringId);
 
         return $q;
     }
@@ -44,5 +46,14 @@ class SmartProcess extends AbstractFinder
     public static function getId($stringId)
     {
         return self::get($stringId)['ID'];
+    }
+    /**
+     * @param string $stringId
+     *
+     * @return int
+     */
+    public static function getEntityId($stringId)
+    {
+        return self::get($stringId)['ENTITY_TYPE_ID'];
     }
 }
