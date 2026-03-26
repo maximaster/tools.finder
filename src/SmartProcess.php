@@ -16,6 +16,12 @@ class SmartProcess extends AbstractFinder
         return '/smartprocess';
     }
 
+    /**
+     * Получает смарт-процесс по его названию
+     *
+     * @param mixed ...$args единственный аргумент название смарт-процесса в виде строки
+     * @return \Bitrix\Main\ORM\Query\Query
+     */
     protected function query(...$args)
     {
         list($stringId) = $args;
