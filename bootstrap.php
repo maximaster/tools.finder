@@ -176,24 +176,24 @@ $eventManager->addEventHandlerCompatible(
     ]
 );
 $eventManager->addEventHandlerCompatible(
-    "crm",
-    "\BITRIX\CRM\MODEL\DYNAMIC\TYPE::ONAFTERADD",
+    'crm',
+    '\BITRIX\CRM\MODEL\DYNAMIC\TYPE::ONAFTERADD',
     [
         Maximaster\Tools\Finder\EventHandlers\Bitrix\Crm\OnCrmDynamicTypeAdd::class,
         'invalidateCache'
     ]
 );
 $eventManager->addEventHandlerCompatible(
-    "crm",
-    "\BITRIX\CRM\MODEL\DYNAMIC\TYPE::ONAFTERUPDATE",
+    'crm',
+    '\BITRIX\CRM\MODEL\DYNAMIC\TYPE::ONAFTERUPDATE',
     [
         Maximaster\Tools\Finder\EventHandlers\Bitrix\Crm\OnCrmDynamicTypeUpdate::class,
         'invalidateCache'
     ]
 );
 $eventManager->addEventHandlerCompatible(
-    "crm",
-    "\BITRIX\CRM\MODEL\DYNAMIC\TYPE::ONAFTERDELETE",
+    'crm',
+    '\BITRIX\CRM\MODEL\DYNAMIC\TYPE::ONAFTERDELETE',
     [
         Maximaster\Tools\Finder\EventHandlers\Bitrix\Crm\OnCrmDynamicTypeDelete::class,
         'invalidateCache'
