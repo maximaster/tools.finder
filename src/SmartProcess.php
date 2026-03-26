@@ -56,7 +56,7 @@ class SmartProcess extends AbstractFinder
     /**
      * @param string $stringId
      *
-     * @return int
+     * @return string
      */
     public static function getEntityId($stringId)
     {
